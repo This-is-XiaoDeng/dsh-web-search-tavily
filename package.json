@@ -1,0 +1,50 @@
+{
+  "name": "@sunaookaminya/dsh-web-search-tavily",
+  "version": "0.1.0",
+  "description": "Tavily-backed web search provider for the DeepSeek Harness (DSH) web capability seam (ctx.web) — registers provider id `tavily`, zero dependencies",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "deepseek",
+    "tavily",
+    "search",
+    "web-search",
+    "cordis",
+    "plugin"
+  ],
+  "license": "MIT",
+  "author": "SunaōkamiNya (This-is-XiaoDeng)",
+  "homepage": "https://github.com/This-is-XiaoDeng/dsh-web-search-tavily#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/This-is-XiaoDeng/dsh-web-search-tavily.git"
+  },
+  "bugs": {
+    "url": "https://github.com/This-is-XiaoDeng/dsh-web-search-tavily/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# dsh-web-search-tavily bundle patch.
+#
+# Point the web seam at Tavily and mount the provider. A patch row replaces the
+# target row's whole config (no deep merge), so every key the shipped `web` row
+# owns is restated here.
+- id: web
+  config:
+    searchProvider: tavily
+    fetchProvider: http
+
+# The provider registers id `tavily` on the ctx.web seam. The API key is not
+# here: it lives in the credential store under TAVILY_API_KEY (or the launch
+# environment / .env files), resolved per search so rotation needs no restart.
+- insert:
+    - id: web-search-tavily
+      name: '@sunaookaminya/dsh-web-search-tavily'
+      config:
+        apiKeyEnv: TAVILY_API_KEY
